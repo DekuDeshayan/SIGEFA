@@ -1,0 +1,6 @@
+{
+    "name": "lenovo/mpesapi",
+    "require": {
+        "karson/mpesa-php-sdk": "^1.3"
+    }
+}
