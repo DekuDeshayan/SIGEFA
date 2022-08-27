@@ -2,13 +2,9 @@
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ //sigefa-ralph.herokuapp.com/index.php/$1 [L] -->
-##Force SSL 
 
-#Normal way (in case you need to deploy to NON-heroku)
-RewriteCond %{HTTPS} !=on
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^sigefa-ralph.herokuapp\.com [NC]
+RewriteRule (.*) https://sigefa-ralph.herokuapp.com/index.php/$1 [L,QSA,R=301]
 
-#Heroku way
-RewriteCond %{HTTP:X-Forwarded-Proto} !https 
 
-#If neither above conditions are met, redirect to https
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
