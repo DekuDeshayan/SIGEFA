@@ -4,7 +4,9 @@ session_start();
 require 'config.php';
 
 //define("BASE_URL", "http://localhost/SIGEFAv1.0");
-define("BASE_URL", "https://sigefa-ralph.herokuapp.com");
+$base_url = getenv('APP_BASE_URL');
+define("BASE_URL", $base_url);
+
 
 spl_autoload_register(function($class){
 
