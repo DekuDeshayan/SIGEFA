@@ -1,4 +1,4 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /SIGEFAv1.0/index.php/$1 [L]
+RewriteRule ^(.*)$ //sigefa-ralph.herokuapp.com/index.php/$1 [L]
